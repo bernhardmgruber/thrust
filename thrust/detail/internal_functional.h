@@ -390,9 +390,9 @@ struct unary_transform_if_with_stencil_functor
   __thrust_exec_check_disable__
   template<typename Tuple>
   inline __host__ __device__
-  typename enable_if_non_const_reference_or_tuple_of_iterator_references<
+  /*typename enable_if_non_const_reference_or_tuple_of_iterator_references<
     typename thrust::tuple_element<2,Tuple>::type
-  >::type
+  >::type*/ void
     operator()(Tuple t)
   {
     if(pred(thrust::get<1>(t)))
